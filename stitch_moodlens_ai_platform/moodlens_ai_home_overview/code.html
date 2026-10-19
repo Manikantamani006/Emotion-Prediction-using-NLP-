@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary":"#1000a9","on-secondary-container":"#b0b2ff","on-primary-fixed":"#21005e","on-primary":"#381385","surface-container-lowest":"#0a0e18","tertiary-container":"#a193d9","tertiary":"#ccbeff","on-primary-container":"#3c1989","inverse-primary":"#674bb5","on-primary-fixed-variant":"#4f319c","on-error-container":"#ffdad6","primary-fixed-dim":"#cebdff","primary-fixed":"#e8ddff","background":"#0f131d","inverse-surface":"#dfe2f1","secondary-fixed-dim":"#c0c1ff","outline-variant":"#494552","on-secondary-fixed-variant":"#2f2ebe","error":"#ffb4ab","surface-container-low":"#171b26","secondary-container":"#3131c0","primary":"#cebdff","tertiary-fixed-dim":"#ccbeff","error-container":"#93000a","secondary-fixed":"#e1e0ff","on-surface-variant":"#cac4d4","on-secondary-fixed":"#07006c","primary-container":"#a78bfa","on-tertiary-fixed":"#1e0e4e","surface-container-highest":"#313540","on-background":"#dfe2f1","surface":"#0f131d","secondary":"#c0c1ff","on-tertiary-fixed-variant":"#4a3d7c","inverse-on-surface":"#2c303b","surface-tint":"#cebdff","tertiary-fixed":"#e7deff","on-tertiary-container":"#372a68","on-error":"#690005","on-tertiary":"#332664","surface-bright":"#353944","surface-container-high":"#262a35","surface-container":"#1c1f2a","surface-dim":"#0f131d","surface-variant":"#313540","outline":"#948e9d","on-surface":"#dfe2f1"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","gutter-mobile":"1rem","gutter":"1.5rem","space-sm":"0.5rem","margin-mobile":"1rem","margin":"2rem","space-md":"1rem","space-xs":"0.25rem","space-xl":"2.5rem"},"fontFamily":{"headline-xl-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-md":["Inter"],"label-lg":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Inter"],"headline-sm":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"]},"fontSize":{"headline-xl-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.015em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0.005em","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-sm":["18px",{"lineHeight":"26px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.5)]"><div class="h-16 max-w-7xl mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="MoodLens AI Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U9rl4COVj2eulA3h9oocJN_k7us0VTXQqidCQBAsu13E0oc3ckNy1m7Q6PhMwPBFDoP88v24zrdiGTMtXb1e7NMikeaXyyOq_yM9M2LCVs16qEj1JXjVoSaR1AQbHWsFaCtL3FfDZvPtvngG7xpUwPAPsaATHaQxEbWG46KskOECMyvIBVSNN1xiLQtBtmjvjXlwgB3tqihb_ZQs7otMbG-r86gmCwPNszckA7BmAel7-AvJ8ZRVefzAmr"/><span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">MoodLens AI</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container-high text-primary">NLP v1.2</span></div><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-on-surface font-semibold rounded-lg"><a aria-current="page" class="px-space-sm py-1.5 transition-colors bg-surface-container-high text-on-surface font-semibold rounded-lg" data-path="home" href="#">Home</a><a class="px-space-sm py-1.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="analyze-workspace" href="#">Analyze Workspace</a><a class="px-space-sm py-1.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="history" href="#">History</a><a class="px-space-sm py-1.5 rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-path="methodology-&-about" href="#">Methodology & About</a></nav><div class="flex items-center gap-space-sm"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low"><span class="h-2 w-2 rounded-full bg-[#10b981] animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Backend: Connected / Ready</span></div><a class="inline-flex items-center justify-center px-space-md py-2 rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg font-semibold hover:bg-primary hover:text-on-primary transition-all shadow-[0_0_16px_rgba(167,139,250,0.25)]" data-path="analyze-workspace" href="#">Analyze Text</a><a class="flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="#" title="Model Docs & Repository"><span class="material-symbols-outlined text-[20px]">terminal</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background max-w-7xl mx-auto px-margin"><div class="flex flex-col w-full">
+<!-- Dynamic Background Glow Accents (Contained) -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/4 w-[500px] h-[500px] bg-primary-container/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute top-80 right-10 w-[420px] h-[420px] bg-secondary-container/15 rounded-full blur-[140px] pointer-events-none"></div>
+<!-- HERO SECTION -->
+<section class="relative w-full pt-space-lg pb-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Left: Text Narrative & Quick-Try Controller -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Pipeline Status Pill -->
+<div class="inline-flex items-center gap-space-xs self-start px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface-variant shadow-sm">
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">NLP Inference Engine v1.2</span>
+<span class="text-outline-variant font-label-sm text-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Calibrated Multi-Class OvR</span>
+</div>
+<!-- Headline -->
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight font-bold max-w-2xl">
+            Understand the emotion behind your words.
+          </h1>
+<!-- Sub-headline -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+            Production-grade emotion classification powered by natural language preprocessing, TF-IDF vectorization, and multi-class Logistic Regression across six core affect states.
+          </p>
+<!-- Interactive Quick-Try Bar -->
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">tune</span>
+              Try a live sample sentence:
+            </span>
+<div class="flex flex-wrap gap-2" id="sample-pills">
+<button class="sample-btn active-pill px-space-sm py-2 rounded-lg bg-surface-container-high text-on-surface text-left font-body-sm text-body-sm transition-all hover:bg-surface-bright shadow-sm flex items-center gap-2" data-color="#F59E0B" data-emotion="Joy" data-probs='{"Joy":94.2,"Love":3.1,"Surprise":1.8,"Sadness":0.4,"Fear":0.3,"Anger":0.2}' data-score="94.2" data-text="I just got accepted into my dream master's program!" data-tokens="[{"w":"accepted","s":0.46,"c":"#F59E0B"},{"w":"dream","s":0.31,"c":"#F59E0B"},{"w":"master's","s":0.12,"c":"#F59E0B"}]" type="button">
+<span class="w-2 h-2 rounded-full bg-[#F59E0B]"></span>
+<span>“I just got accepted into my dream master's program!”</span>
+</button>
+<button class="sample-btn px-space-sm py-2 rounded-lg bg-surface-container text-on-surface-variant text-left font-body-sm text-body-sm transition-all hover:bg-surface-bright hover:text-on-surface shadow-sm flex items-center gap-2" data-color="#8B5CF6" data-emotion="Fear" data-probs='{"Fear":88.7,"Surprise":5.4,"Sadness":3.1,"Anger":1.2,"Joy":0.8,"Love":0.8}' data-score="88.7" data-text="Walking through the empty hallway after midnight feeling watched..." data-tokens='[{"w":"watched","s":0.42,"c":"#8B5CF6"},{"w":"empty","s":0.26,"c":"#8B5CF6"},{"w":"midnight","s":0.19,"c":"#8B5CF6"}]' type="button">
+<span class="w-2 h-2 rounded-full bg-[#8B5CF6]"></span>
+<span>“Walking through the empty hallway after midnight...”</span>
+</button>
+<button class="sample-btn px-space-sm py-2 rounded-lg bg-surface-container text-on-surface-variant text-left font-body-sm text-body-sm transition-all hover:bg-surface-bright hover:text-on-surface shadow-sm flex items-center gap-2" data-color="#EF4444" data-emotion="Anger" data-probs='{"Anger":82.4,"Sadness":10.2,"Surprise":4.1,"Fear":2.0,"Joy":0.8,"Love":0.5}' data-score="82.4" data-text="I can't believe how careless they were with our project timeline." data-tokens='[{"w":"careless","s":0.48,"c":"#EF4444"},{"w":"timeline","s":0.18,"c":"#EF4444"},{"w":"believe","s":0.11,"c":"#EF4444"}]' type="button">
+<span class="w-2 h-2 rounded-full bg-[#EF4444]"></span>
+<span>“I can't believe how careless they were with...”</span>
+</button>
+</div>
+</div>
+<!-- Hero CTAs -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<a class="inline-flex items-center justify-center gap-space-xs px-space-md py-3 rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg font-semibold hover:bg-primary hover:text-on-primary transition-all shadow-[0_0_24px_rgba(167,139,250,0.35)] group" data-path="analyze-workspace" href="#">
+<span>Launch Analyze Workspace</span>
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-space-xs px-space-md py-3 rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg font-semibold hover:bg-surface-bright transition-colors shadow-sm" href="#pipeline-architecture">
+<span class="material-symbols-outlined text-[18px] text-tertiary">account_tree</span>
+<span>Explore Pipeline & Architecture</span>
+</a>
+</div>
+<!-- Micro Spec Metadata Bar -->
+<div class="flex items-center gap-space-md pt-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#10b981]">speed</span>
+<span>Latency: ~34ms / query</span>
+</div>
+<span>•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">layers</span>
+<span>Vocabulary: 5,000 Unigrams & Bigrams</span>
+</div>
+</div>
+</div>
+<!-- Right: Abstract Hero Glass Console & Live Spectrum -->
+<div class="lg:col-span-5 relative">
+<!-- Ambient backdrop blur orb -->
+<div class="absolute inset-0 bg-primary/10 rounded-2xl filter blur-2xl transform scale-95 pointer-events-none"></div>
+<div class="relative rounded-2xl bg-surface-container-low p-space-md shadow-2xl flex flex-col gap-space-md">
+<!-- Terminal Header -->
+<div class="flex items-center justify-between pb-space-xs bg-surface-container-low">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-[#EF4444]/80"></div>
+<div class="w-3 h-3 rounded-full bg-[#F59E0B]/80"></div>
+<div class="w-3 h-3 rounded-full bg-[#10B981]/80"></div>
+<span class="ml-2 font-label-sm text-label-sm text-on-surface-variant font-mono">live_inference_monitor.py</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-mono">
+                L2-REG / MULTI-CLASS
+              </span>
+</div>
+<!-- Active Payload Input Preview -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Payload Stream</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono" id="token-count">8 tokens (UTF-8)</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-snug italic" id="preview-text">
+                “I just got accepted into my dream master's program!”
+              </p>
+</div>
+<!-- Linguistic Wave Spectrum SVG (Subtle live audio-semantic effect) -->
+<div class="bg-surface-container rounded-xl p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">graphic_eq</span>
+                  TF-IDF Weight Distribution Matrix
+                </span>
+<span class="font-label-sm text-label-sm text-primary font-mono" id="dominant-tag">JOY • 94.2%</span>
+</div>
+<!-- Inline Wave SVG -->
+<div class="w-full h-20 flex items-center justify-center overflow-hidden">
+<svg class="w-full h-full text-primary" fill="none" viewbox="0 0 400 70">
+<path class="opacity-90" d="M0,35 Q20,10 40,35 T80,35 T120,5 T160,35 T200,60 T240,35 T280,15 T320,35 T360,50 T400,35" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path class="opacity-75" d="M0,35 Q25,48 50,35 T100,20 T150,35 T200,10 T250,35 T300,55 T350,35 T400,25" id="wave-highlight" stroke="#F59E0B" stroke-dasharray="4 3" stroke-width="1.8"></path>
+<path class="opacity-30" d="M0,35 Q30,25 60,35 T120,45 T180,35 T240,25 T300,35 T360,42 T400,35" stroke="#8B5CF6" stroke-width="1"></path>
+<!-- Data nodes -->
+<circle class="shadow-lg" cx="120" cy="5" fill="#F59E0B" r="4.5"></circle>
+<circle cx="200" cy="60" fill="#cebdff" r="3.5"></circle>
+<circle cx="280" cy="15" fill="#F59E0B" r="4"></circle>
+</svg>
+</div>
+<!-- Extracted N-Gram Keyword Chips -->
+<div class="flex items-center gap-1.5 flex-wrap pt-1" id="keyword-chips">
+<span class="font-label-sm text-label-sm text-outline">Salient N-Grams:</span>
+<span class="px-2 py-0.5 rounded bg-[#F59E0B]/20 text-[#F59E0B] font-mono text-label-sm">accepted (+0.46)</span>
+<span class="px-2 py-0.5 rounded bg-[#F59E0B]/20 text-[#F59E0B] font-mono text-label-sm">dream (+0.31)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">program (+0.12)</span>
+</div>
+</div>
+<!-- Multi-Class Probability Meters -->
+<div class="flex flex-col gap-2 bg-surface-container-lowest p-space-sm rounded-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline mb-1">Class Density Distribution</span>
+<!-- Joy -->
+<div class="flex items-center justify-between text-body-sm font-label-sm">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-[#F59E0B]"></span> Joy
+                </span>
+<div class="w-1/2 bg-surface-container-high h-2 rounded-full overflow-hidden mx-2">
+<div class="bg-[#F59E0B] h-full rounded-full transition-all duration-500" id="bar-Joy" style="width: 94.2%"></div>
+</div>
+<span class="font-mono text-on-surface w-12 text-right" id="pct-Joy">94.2%</span>
+</div>
+<!-- Love -->
+<div class="flex items-center justify-between text-body-sm font-label-sm">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-[#EC4899]"></span> Love
+                </span>
+<div class="w-1/2 bg-surface-container-high h-2 rounded-full overflow-hidden mx-2">
+<div class="bg-[#EC4899] h-full rounded-full transition-all duration-500" id="bar-Love" style="width: 3.1%"></div>
+</div>
+<span class="font-mono text-on-surface-variant w-12 text-right" id="pct-Love">3.1%</span>
+</div>
+<!-- Surprise -->
+<div class="flex items-center justify-between text-body-sm font-label-sm">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-[#10B981]"></span> Surprise
+                </span>
+<div class="w-1/2 bg-surface-container-high h-2 rounded-full overflow-hidden mx-2">
+<div class="bg-[#10B981] h-full rounded-full transition-all duration-500" id="bar-Surprise" style="width: 1.8%"></div>
+</div>
+<span class="font-mono text-on-surface-variant w-12 text-right" id="pct-Surprise">1.8%</span>
+</div>
+<!-- Sadness -->
+<div class="flex items-center justify-between text-body-sm font-label-sm">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-[#3B82F6]"></span> Sadness
+                </span>
+<div class="w-1/2 bg-surface-container-high h-2 rounded-full overflow-hidden mx-2">
+<div class="bg-[#3B82F6] h-full rounded-full transition-all duration-500" id="bar-Sadness" style="width: 0.4%"></div>
+</div>
+<span class="font-mono text-on-surface-variant w-12 text-right" id="pct-Sadness">0.4%</span>
+</div>
+<!-- Fear -->
+<div class="flex items-center justify-between text-body-sm font-label-sm">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-[#8B5CF6]"></span> Fear
+                </span>
+<div class="w-1/2 bg-surface-container-high h-2 rounded-full overflow-hidden mx-2">
+<div class="bg-[#8B5CF6] h-full rounded-full transition-all duration-500" id="bar-Fear" style="width: 0.3%"></div>
+</div>
+<span class="font-mono text-on-surface-variant w-12 text-right" id="pct-Fear">0.3%</span>
+</div>
+<!-- Anger -->
+<div class="flex items-center justify-between text-body-sm font-label-sm">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-[#EF4444]"></span> Anger
+                </span>
+<div class="w-1/2 bg-surface-container-high h-2 rounded-full overflow-hidden mx-2">
+<div class="bg-[#EF4444] h-full rounded-full transition-all duration-500" id="bar-Anger" style="width: 0.2%"></div>
+</div>
+<span class="font-mono text-on-surface-variant w-12 text-right" id="pct-Anger">0.2%</span>
+</div>
+</div>
+<!-- Micro latency footer -->
+<div class="flex items-center justify-between font-label-sm text-label-sm text-outline px-1">
+<span>Tokenization: Regex + PorterStemmer</span>
+<span class="text-[#10B981] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                Inference Validated
+              </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: 6 CORE EMOTION CLASSES SHOWCASE -->
+<section class="w-full py-space-xl">
+<div class="flex flex-col gap-space-xs mb-space-lg">
+<div class="inline-flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Semantic Taxonomy</span>
+<span class="text-outline-variant font-label-sm text-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Standardized 6-Affect Space</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+          Calibrated Multi-Class Taxonomy
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          MoodLens partitions affective human sentiment into six orthogonal states. Each classification provides isolated token saliency and posterior probability scores.
+        </p>
+</div>
+<!-- 6-Grid Affect Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- 1. JOY -->
+<div class="group relative rounded-xl bg-surface-container-low p-space-md shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-[#F59E0B]/15 flex items-center justify-center text-[#F59E0B]">
+<span class="material-symbols-outlined text-[24px]">wb_sunny</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Joy</h3>
+<span class="font-label-sm text-label-sm text-[#F59E0B]">Radiance • Celebration</span>
+</div>
+</div>
+<span class="font-mono text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Class #0</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-relaxed">
+            Characterized by states of exhilaration, triumphant accomplishment, warmth, and buoyant psychological validation.
+          </p>
+<div class="bg-surface-container-lowest p-space-xs rounded-lg mb-space-sm">
+<span class="font-label-sm text-label-sm text-outline block mb-1">Archetypal Expression:</span>
+<span class="font-body-sm text-body-sm text-on-surface italic">“Words cannot express how thankful and thrilled I am!”</span>
+</div>
+<div class="flex flex-wrap gap-1 items-center">
+<span class="font-label-sm text-label-sm text-outline mr-1">Predictors:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">delight</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">won</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">grateful</span>
+</div>
+</div>
+<!-- 2. SADNESS -->
+<div class="group relative rounded-xl bg-surface-container-low p-space-md shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-[#3B82F6]/15 flex items-center justify-center text-[#3B82F6]">
+<span class="material-symbols-outlined text-[24px]">cloud</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Sadness</h3>
+<span class="font-label-sm text-label-sm text-[#3B82F6]">Melancholy • Reflection</span>
+</div>
+</div>
+<span class="font-mono text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Class #1</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-relaxed">
+            Associated with depletion, bereavement, emotional fatigue, or inward mourning over irreversible interpersonal loss.
+          </p>
+<div class="bg-surface-container-lowest p-space-xs rounded-lg mb-space-sm">
+<span class="font-label-sm text-label-sm text-outline block mb-1">Archetypal Expression:</span>
+<span class="font-body-sm text-body-sm text-on-surface italic">“Sitting alone unpacking boxes, feeling an unbearable void.”</span>
+</div>
+<div class="flex flex-wrap gap-1 items-center">
+<span class="font-label-sm text-label-sm text-outline mr-1">Predictors:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">grief</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">lonely</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">miss</span>
+</div>
+</div>
+<!-- 3. ANGER -->
+<div class="group relative rounded-xl bg-surface-container-low p-space-md shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-[#EF4444]/15 flex items-center justify-center text-[#EF4444]">
+<span class="material-symbols-outlined text-[24px]">local_fire_department</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Anger</h3>
+<span class="font-label-sm text-label-sm text-[#EF4444]">Frustration • Conflict</span>
+</div>
+</div>
+<span class="font-mono text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Class #2</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-relaxed">
+            Identifies antagonistic tension, systemic indignance, perceived injustice, or acute verbal hostility directed outward.
+          </p>
+<div class="bg-surface-container-lowest p-space-xs rounded-lg mb-space-sm">
+<span class="font-label-sm text-label-sm text-outline block mb-1">Archetypal Expression:</span>
+<span class="font-body-sm text-body-sm text-on-surface italic">“This complete disregard for our agreement is utterly infuriating.”</span>
+</div>
+<div class="flex flex-wrap gap-1 items-center">
+<span class="font-label-sm text-label-sm text-outline mr-1">Predictors:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">furious</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">betray</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">waste</span>
+</div>
+</div>
+<!-- 4. LOVE -->
+<div class="group relative rounded-xl bg-surface-container-low p-space-md shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-[#EC4899]/15 flex items-center justify-center text-[#EC4899]">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Love</h3>
+<span class="font-label-sm text-label-sm text-[#EC4899]">Affection • Devotion</span>
+</div>
+</div>
+<span class="font-mono text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Class #3</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-relaxed">
+            Interpersonal intimacy, profound appreciation, affectionate tenderness, and emotional resonance anchored to kinship or devotion.
+          </p>
+<div class="bg-surface-container-lowest p-space-xs rounded-lg mb-space-sm">
+<span class="font-label-sm text-label-sm text-outline block mb-1">Archetypal Expression:</span>
+<span class="font-body-sm text-body-sm text-on-surface italic">“I cherish every single afternoon we get to spend collaborating.”</span>
+</div>
+<div class="flex flex-wrap gap-1 items-center">
+<span class="font-label-sm text-label-sm text-outline mr-1">Predictors:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">cherish</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">adore</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">heart</span>
+</div>
+</div>
+<!-- 5. FEAR -->
+<div class="group relative rounded-xl bg-surface-container-low p-space-md shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-[#8B5CF6]/15 flex items-center justify-center text-[#8B5CF6]">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Fear</h3>
+<span class="font-label-sm text-label-sm text-[#8B5CF6]">Apprehension • Peril</span>
+</div>
+</div>
+<span class="font-mono text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Class #4</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-relaxed">
+            Perceived threats, existential dread, vulnerability, suspense, or psychological anticipation of negative destabilization.
+          </p>
+<div class="bg-surface-container-lowest p-space-xs rounded-lg mb-space-sm">
+<span class="font-label-sm text-label-sm text-outline block mb-1">Archetypal Expression:</span>
+<span class="font-body-sm text-body-sm text-on-surface italic">“My hands shook reading the final test results on my desk.”</span>
+</div>
+<div class="flex flex-wrap gap-1 items-center">
+<span class="font-label-sm text-label-sm text-outline mr-1">Predictors:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">panic</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">dread</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">shook</span>
+</div>
+</div>
+<!-- 6. SURPRISE -->
+<div class="group relative rounded-xl bg-surface-container-low p-space-md shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="flex items-start justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-[#10B981]/15 flex items-center justify-center text-[#10B981]">
+<span class="material-symbols-outlined text-[24px]">bolt</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Surprise</h3>
+<span class="font-label-sm text-label-sm text-[#10B981]">Wonder • Astonishment</span>
+</div>
+</div>
+<span class="font-mono text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Class #5</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-relaxed">
+            Cognitive rupture, unexpected turn of events, sudden realization, or shock breaking everyday predictive assumptions.
+          </p>
+<div class="bg-surface-container-lowest p-space-xs rounded-lg mb-space-sm">
+<span class="font-label-sm text-label-sm text-outline block mb-1">Archetypal Expression:</span>
+<span class="font-body-sm text-body-sm text-on-surface italic">“I never in a million years imagined finding this letter here.”</span>
+</div>
+<div class="flex flex-wrap gap-1 items-center">
+<span class="font-label-sm text-label-sm text-outline mr-1">Predictors:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">sudden</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">unreal</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-label-sm">jaw-drop</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: ENGINEERED FOR EXPLAINABILITY (Bento Highlights) -->
+<section class="w-full py-space-xl">
+<div class="flex flex-col gap-space-xs mb-space-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Interpretability Pillars</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+          Engineered for Mathematical Explainability
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Black-box sentiment detectors leave engineers guessing. MoodLens pairs high accuracy with granular interpretability so you inspect every decision boundary.
+        </p>
+</div>
+<!-- Bento Grid (4 Pillars) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+<!-- Bento 1: Multi-Class Calibration (7 cols) -->
+<div class="md:col-span-7 rounded-2xl bg-surface-container-low p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-xs mb-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-[24px]">query_stats</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+              Probabilistic Multi-Class Calibration
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Rather than collapsing predictions into a single opaque label, MoodLens outputs well-calibrated soft posterior probabilities via softmax multinomial scaling across all 6 affect axes simultaneously.
+            </p>
+</div>
+<!-- Mini Inline Visualization: Calibration Curve Sparkline -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Class Reliability Calibration Metric (Brier Score: 0.084)</span>
+<span class="text-[#10B981] font-mono">Calibrated • Platt Scale</span>
+</div>
+<div class="w-full h-16 flex items-center">
+<svg class="w-full h-full text-primary" fill="none" viewbox="0 0 350 60">
+<!-- Diagonal Reference (Perfect calibration) -->
+<line stroke="#494552" stroke-dasharray="3 3" stroke-width="1.5" x1="10" x2="340" y1="50" y2="10"></line>
+<!-- Model Calibrated Curve -->
+<path d="M10,50 Q100,42 180,28 T340,11" stroke="#a78bfa" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="180" cy="28" fill="#cebdff" r="4"></circle>
+<circle cx="270" cy="18" fill="#cebdff" r="4"></circle>
+<circle cx="340" cy="11" fill="#cebdff" r="4"></circle>
+</svg>
+</div>
+</div>
+</div>
+<!-- Bento 2: TF-IDF N-Gram Importance (5 cols) -->
+<div class="md:col-span-5 rounded-2xl bg-surface-container-low p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-xs mb-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary mb-2">
+<span class="material-symbols-outlined text-[24px]">segment</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+              TF-IDF N-Gram Saliency
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Trace exactly which words or sub-phrases triggered the weights. Inspect coefficient multipliers directly from the trained Logistic Regression parameter matrix.
+            </p>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-xl flex flex-col gap-1.5 font-mono text-label-sm">
+<div class="flex justify-between items-center text-on-surface">
+<span>w1: “thrilled_to”</span>
+<span class="text-[#F59E0B] font-semibold">+2.844</span>
+</div>
+<div class="flex justify-between items-center text-on-surface">
+<span>w2: “deeply_grateful”</span>
+<span class="text-[#F59E0B] font-semibold">+2.109</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>w3: “never_again”</span>
+<span class="text-[#EF4444] font-semibold">-1.732</span>
+</div>
+</div>
+</div>
+<!-- Bento 3: Non-Diagnostic Ethical Guardrail (5 cols) -->
+<div class="md:col-span-5 rounded-2xl bg-surface-container-low p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-xs mb-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary mb-2">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+              Ethical Linguistic Boundaries
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Strictly engineered as a linguistic tone estimator, MoodLens actively avoids psychiatric pathologizing. Results are bounded as contextual statistical indicators, not human diagnostic assessments.
+            </p>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-high/60 flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">lock</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Statistically bounded • Zero HIPAA PII retention</span>
+</div>
+</div>
+<!-- Bento 4: Sub-50ms Fast Execution (7 cols) -->
+<div class="md:col-span-7 rounded-2xl bg-surface-container-low p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-xs mb-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-[#10B981] mb-2">
+<span class="material-symbols-outlined text-[24px]">bolt</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+              Sub-50ms Lightweight Inference
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              No bloated multi-gigabyte neural weight downloads or expensive GPU cluster dependencies. Scikit-learn vectorized arrays execute instantaneously in lightweight serverless containers or FastAPI edge microservices.
+            </p>
+</div>
+<div class="grid grid-cols-3 gap-space-xs bg-surface-container-lowest p-space-sm rounded-xl text-center">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold font-mono">34ms</span>
+<span class="font-label-sm text-label-sm text-outline">Mean P95 Latency</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-[#10B981] font-semibold font-mono">4.2MB</span>
+<span class="font-label-sm text-label-sm text-outline">Total Artifact Size</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-semibold font-mono">0 GPU</span>
+<span class="font-label-sm text-label-sm text-outline">Pure CPU Execution</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: PIPELINE ARCHITECTURE STRIP -->
+<section class="w-full py-space-xl" id="pipeline-architecture">
+<div class="rounded-2xl bg-surface-container-low p-space-lg shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Computational Workflow</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+              End-to-End Inference Pipeline
+            </h2>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-1 rounded bg-surface-container-high font-mono text-label-sm text-on-surface-variant">Deterministic Graph</span>
+<span class="px-space-sm py-1 rounded bg-surface-container-high font-mono text-label-sm text-primary">Scikit-learn 1.4+</span>
+</div>
+</div>
+<!-- 5-Step Pipeline Strip -->
+<div class="grid grid-cols-1 md:grid-cols-5 gap-space-sm relative">
+<!-- Step 1 -->
+<div class="flex flex-col gap-space-xs bg-surface-container p-space-md rounded-xl relative group hover:bg-surface-bright transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-mono text-label-sm text-primary">01</span>
+<span class="material-symbols-outlined text-[18px] text-outline">edit_note</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-medium text-[16px]">Raw Text Payload</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">UTF-8 cleaned string input up to 10,000 characters.</p>
+<div class="mt-auto pt-space-xs font-mono text-label-sm text-outline">Sanitize & Trim</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col gap-space-xs bg-surface-container p-space-md rounded-xl relative group hover:bg-surface-bright transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-mono text-label-sm text-primary">02</span>
+<span class="material-symbols-outlined text-[18px] text-outline">code</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-medium text-[16px]">Tokenization & Stem</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Regex word boundary splitting and Porter stemming.</p>
+<div class="mt-auto pt-space-xs font-mono text-label-sm text-outline">Lowercase / Punct</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col gap-space-xs bg-surface-container p-space-md rounded-xl relative group hover:bg-surface-bright transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-mono text-label-sm text-primary">03</span>
+<span class="material-symbols-outlined text-[18px] text-outline">grid_on</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-medium text-[16px]">TF-IDF Matrix</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">5,000 top n-grams (1-2) converted to term frequency vectors.</p>
+<div class="mt-auto pt-space-xs font-mono text-label-sm text-outline">Sparse Matrix</div>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col gap-space-xs bg-surface-container p-space-md rounded-xl relative group hover:bg-surface-bright transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-mono text-label-sm text-primary">04</span>
+<span class="material-symbols-outlined text-[18px] text-outline">calculate</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-medium text-[16px]">Logistic Regression</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">L2 regularized One-vs-Rest classification decision planes.</p>
+<div class="mt-auto pt-space-xs font-mono text-label-sm text-outline">Multi-Class OvR</div>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col gap-space-xs bg-surface-container p-space-md rounded-xl relative group hover:bg-surface-bright transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-mono text-label-sm text-[#10B981]">05</span>
+<span class="material-symbols-outlined text-[18px] text-[#10B981]">verified</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-medium text-[16px]">Calibrated Outputs</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Softmax percentages across 6 states + key token drivers.</p>
+<div class="mt-auto pt-space-xs font-mono text-label-sm text-[#10B981]">JSON Response</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: IMMERSIVE CALL TO ACTION -->
+<section class="w-full py-space-xl mb-space-lg">
+<div class="relative rounded-2xl bg-gradient-to-r from-surface-container via-surface-container-high to-surface-container p-space-xl shadow-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<!-- Ambient orb glow -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="flex flex-col gap-space-xs max-w-xl z-10">
+<div class="inline-flex items-center gap-1.5 text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+            Ready to explore?
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+            Deploy affective intelligence into your workflow.
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Enter your custom sentences, inspect token weight vectors in real time, or explore the open architecture benchmark dataset.
+          </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-sm z-10 w-full sm:w-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-3 rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg font-semibold hover:bg-primary hover:text-on-primary transition-all shadow-[0_0_24px_rgba(167,139,250,0.35)]" data-path="analyze-workspace" href="#">
+<span>Open Analyze Workspace</span>
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-md py-3 rounded-lg bg-surface-container-lowest text-on-surface font-label-lg text-label-lg font-medium hover:bg-surface-container transition-colors" data-path="methodology-&-about" href="#">
+<span>Read Methodology</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<!-- Interactive Sample Switcher Script (Vanilla JS) -->
+<script>
+    (function initSamplePillController() {
+      const pills = document.querySelectorAll('.sample-btn');
+      const previewText = document.getElementById('preview-text');
+      const dominantTag = document.getElementById('dominant-tag');
+      const tokenCount = document.getElementById('token-count');
+      const keywordChips = document.getElementById('keyword-chips');
+      const waveHighlight = document.getElementById('wave-highlight');
+
+      const emotions = ['Joy', 'Love', 'Surprise', 'Sadness', 'Fear', 'Anger'];
+
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          // Toggle Active Classes
+          pills.forEach(p => {
+            p.classList.remove('bg-surface-container-high', 'text-on-surface');
+            p.classList.add('bg-surface-container', 'text-on-surface-variant');
+          });
+          pill.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          pill.classList.add('bg-surface-container-high', 'text-on-surface');
+
+          const text = pill.getAttribute('data-text');
+          const emotion = pill.getAttribute('data-emotion');
+          const score = pill.getAttribute('data-score');
+          const color = pill.getAttribute('data-color');
+          const tokens = JSON.parse(pill.getAttribute('data-tokens') || '[]');
+          const probs = JSON.parse(pill.getAttribute('data-probs') || '{}');
+
+          // Update Preview
+          if (previewText) previewText.innerHTML = `“${text}”`;
+          if (dominantTag) {
+            dominantTag.innerHTML = `${emotion.toUpperCase()} • ${score}%`;
+            dominantTag.style.color = color;
+          }
+          if (waveHighlight) waveHighlight.setAttribute('stroke', color);
+          if (tokenCount) {
+            const words = text.trim().split(/\\s+/).length;
+            tokenCount.textContent = `${words} tokens (UTF-8)`;
+          }
+
+          // Update Salient Chips
+          if (keywordChips) {
+            let html = '<span class="font-label-sm text-label-sm text-outline">Salient N-Grams:</span>';
+            tokens.forEach(tok => {
+              html += `<span class="px-2 py-0.5 rounded font-mono text-label-sm" style="background-color: ${tok.c}25; color: ${tok.c};">${tok.w} (+${tok.s})</span>`;
+            });
+            keywordChips.innerHTML = html;
+          }
+
+          // Update Probability Bars
+          emotions.forEach(em => {
+            const val = probs[em] !== undefined ? probs[em] : 0;
+            const bar = document.getElementById(`bar-${em}`);
+            const pct = document.getElementById(`pct-${em}`);
+            if (bar) bar.style.width = `${val}%`;
+            if (pct) pct.textContent = `${val.toFixed(1)}%`;
+          });
+        });
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest mt-space-xl shadow-[0_-1px_12px_rgba(0,0,0,0.4)]"><div class="max-w-7xl mx-auto px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg mb-space-lg"><div class="md:col-span-5 flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">MoodLens AI</span><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container text-tertiary">TF-IDF + Logistic Regression</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Natural language emotion categorization architecture powered by scientific NLP pipelines. Built for real-time sentiment distribution and transparent probabilistic metrics.</p></div><div class="md:col-span-4 flex flex-col gap-space-xs"><span class="font-label-md text-label-md text-on-surface font-semibold uppercase tracking-wider">Privacy & Ethics</span><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Analysis occurs entirely in-memory; raw text payloads are never stored nor utilized for model training. Predictions represent probabilistic statistical heuristics, not clinical psychiatric diagnoses.</p></div><div class="md:col-span-3 flex flex-col gap-space-xs"><span class="font-label-md text-label-md text-on-surface font-semibold uppercase tracking-wider">System Navigation</span><div class="flex flex-col gap-1"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="analyze-workspace" href="#">Inference Sandbox</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="history" href="#">Session Log Archive</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="methodology-&-about" href="#">Model Benchmark & Methodology</a></div></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant"><span class="font-body-sm text-body-sm">© 2025 MoodLens AI NLP Research. Open Inference Engine.</span><div class="flex items-center gap-space-md font-body-sm text-body-sm"><span class="text-on-surface-variant">FastAPI Core v0.110</span><span class="text-on-surface-variant">•</span><span class="text-on-surface-variant">Scikit-Learn Microservice</span></div></div></div></footer></body></html>
