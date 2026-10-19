@@ -1,205 +1,224 @@
-# MoodLens AI — Emotion Prediction Platform
+<div align="center">
 
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-5+-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4+-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.4+-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+<img src="assets/banner.svg" alt="MoodLens AI" width="100%"/>
 
-**MoodLens AI** is an end-to-end, full-stack Natural Language Processing (NLP) application designed to classify emotion in text across six core affective dimensions: **Joy**, **Sadness**, **Anger**, **Love**, **Fear**, and **Surprise**.
+<a href="https://github.com/your-username/emotion-predictor">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=3000&pause=900&color=8B5CF6&center=true&vCenter=true&width=700&height=40&lines=Classify+emotion+in+text+in+real+time;6+emotions.+One+FastAPI+endpoint.;TF-IDF+%2B+Logistic+Regression%2C+served+in-memory;Dark-mode+React+UI+designed+with+Google+Stitch" alt="Typing animation"/>
+</a>
 
-It pairs a high-performance **FastAPI** backend running an optimized Multi-Class Logistic Regression model with a modern, high-precision dark-mode **React (Vite + TypeScript + Tailwind CSS)** user interface generated via **Google Stitch**.
+<br/>
 
----
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-18+-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-5+-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4+-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.4+-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 
-## Table of Contents
+<br/>
 
-- [Key Features](#key-features)
-- [Architecture & Directory Structure](#architecture--directory-structure)
-- [Machine Learning & Preprocessing Parity](#machine-learning--preprocessing-parity)
-- [Prerequisites](#prerequisites)
-- [Quick Start Guide](#quick-start-guide)
-  - [Terminal 1: Backend (FastAPI)](#terminal-1-backend-fastapi)
-  - [Terminal 2: Frontend (React + Vite)](#terminal-2-frontend-react--vite)
-- [REST API Reference](#rest-api-reference)
-- [Environment Configuration](#environment-configuration)
-- [Automated Testing & Verification](#automated-testing--verification)
-- [Troubleshooting](#troubleshooting)
-- [License & Acknowledgments](#license--acknowledgments)
+**[Quick Start](#-quick-start)** &nbsp;•&nbsp;
+**[Features](#-features)** &nbsp;•&nbsp;
+**[How It Works](#-how-it-works)** &nbsp;•&nbsp;
+**[API](#-api-reference)** &nbsp;•&nbsp;
+**[Testing](#-testing)** &nbsp;•&nbsp;
+**[Troubleshooting](#-troubleshooting)**
+
+</div>
 
 ---
 
-## Key Features
+## 🧠 What is MoodLens AI?
 
-- **Trained NLP Model Deployment:** In-memory inference using a fitted TF-IDF vectorizer (13,359 sparse vocabulary) and an L2-regularized Logistic Regression classifier ($C=10.0$).
-- **Preprocessing Parity:** Strict replication of the training pipeline (including NLTK English stopwords filtering), eliminating lexical mismatch.
-- **Probabilistic Spread:** Detailed, calibrated confidence scores summing to $\approx 1.0$ across all 6 emotion classes.
-- **Interactive Workspace:** Real-time character, word, and estimated n-gram token counters, clipboard paste/clear, and instant linguistic presets.
-- **Persistent Analysis History:** Built-in SQLite database (`backend/history.db`) that records past queries, predictions, and timestamps with full persistence across server restarts.
-- **Telemetry & Filters:** Keyword search, emotion category filters, multi-criteria sorting, and one-click **CSV data export**.
-- **Interactive 5-Stage Pipeline Explorer:** Visual representation of the model transformation lifecycle with parameter breakdowns.
-- **Health & Readiness Check:** Live backend health indicator embedded in the navigation bar.
+**MoodLens AI** is an end-to-end, full-stack NLP application that reads a piece of text and tells you which emotion it expresses, along with a confidence score for every class.
 
----
+It pairs a **FastAPI** backend serving a Multi-Class Logistic Regression model with a dark-mode **React + Vite + TypeScript + Tailwind** interface designed in **Google Stitch**.
 
-## Architecture & Directory Structure
+<div align="center">
 
-```
-emotion-predictor/
-├── backend/                             # Python FastAPI Service
-│   ├── artifacts/                       # Trained ML Artifacts
-│   │   ├── best_lr_model.pkl            # Trained Logistic Regression model
-│   │   ├── tfidf_vectorizer.pkl         # Fitted TF-IDF Vectorizer
-│   │   └── emotion_mapping.pkl          # Class label to ID mapping
-│   ├── main.py                          # FastAPI application and route handlers
-│   ├── model_service.py                 # NLTK preprocessing & ML inference service
-│   ├── database.py                      # SQLite persistence and history handlers
-│   ├── requirements.txt                 # Backend Python dependencies
-│   ├── test_backend.py                  # Automated integration test suite
-│   └── history.db                       # Local SQLite storage (created on launch)
-│
-├── frontend/                            # React + Vite + TypeScript Frontend
-│   ├── public/                          # Static assets and icons
-│   ├── src/
-│   │   ├── components/
-│   │   │   └── Navbar.tsx               # Header with connection badge & tabs
-│   │   ├── views/
-│   │   │   ├── HomeView.tsx             # Hero overview, sample pills & console wave
-│   │   │   ├── AnalyzeWorkspaceView.tsx # Emotion analysis workspace & results cards
-│   │   │   ├── HistoryView.tsx          # History table, filters, search & CSV export
-│   │   │   └── MethodologyView.tsx      # 5-Stage pipeline & hyperparameter specs
-│   │   ├── api.ts                       # Typed fetch client for backend endpoints
-│   │   ├── emotionMeta.ts               # Affect taxonomy, semantic colors & presets
-│   │   ├── App.tsx                      # Root component and navigation state
-│   │   ├── index.css                    # Tailwind directives & Stitch typography
-│   │   └── main.tsx                     # React DOM entrypoint
-│   ├── package.json                     # Scripts and frontend dependencies
-│   ├── tailwind.config.js               # MoodLens AI design tokens & color palette
-│   ├── tsconfig.json                    # TypeScript compiler configuration
-│   ├── .env.example                     # Sample frontend environment config
-│   └── .env                             # Active frontend environment variables
-│
-├── stitch_moodlens_ai_platform/         # Raw Stitch design exports & specifications
-├── main.ipynb                           # Original Jupyter training notebook
-├── README.md                            # Project documentation
-└── .gitignore                           # Git exclusions (venv, node_modules, db)
+| 😄 Joy | 😢 Sadness | 😠 Anger | ❤️ Love | 😨 Fear | 😲 Surprise |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| `#F59E0B` | `#3B82F6` | `#EF4444` | `#EC4899` | `#8B5CF6` | `#10B981` |
+
+</div>
+
+### See it in action
+
+```text
+ INPUT   "I just received the acceptance letter for my dream master's program!"
+   │
+   ▼
+ CLEAN   "received acceptance letter dream masters program"
+   │
+   ▼
+ VECTOR  TF-IDF  →  13,359-dim sparse vector
+   │
+   ▼
+ OUTPUT  😄 joy   ████████████████████ 98.42%
+         😢 sadness ▏ 0.51%   😠 anger ▏ 0.42%   😲 surprise ▏ 0.34%
 ```
 
 ---
 
-## Machine Learning & Preprocessing Parity
+## ✨ Features
 
-The model classifies text across **six core affect states**:
+| | Feature | Details |
+| :---: | :--- | :--- |
+| 🤖 | **In-memory inference** | Fitted TF-IDF vectorizer (13,359 vocabulary) + L2-regularized Logistic Regression (`C=10.0`), loaded once at startup |
+| 🔁 | **Preprocessing parity** | The inference pipeline mirrors training exactly, including NLTK stopword filtering, so there is no lexical mismatch |
+| 📊 | **Probabilistic output** | Confidence scores across all 6 classes, summing to ≈ 1.0 |
+| ⌨️ | **Interactive workspace** | Live character / word / n-gram counters, clipboard paste and clear, one-click presets |
+| 🗄️ | **Persistent history** | SQLite (`backend/history.db`) keeps queries, predictions and timestamps across restarts |
+| 🔎 | **Telemetry and filters** | Keyword search, emotion filters, multi-criteria sorting, **CSV export** |
+| 🧭 | **5-stage pipeline explorer** | Visual walkthrough of the model lifecycle with parameter breakdowns |
+| 💚 | **Live health badge** | Backend readiness indicator right in the navbar |
 
-| Emotion | Semantic Color | Description |
-| :--- | :--- | :--- |
-| **Joy** | `#F59E0B` (Warm Amber) | Pleasure, accomplishment, euphoria, and elevated optimism |
-| **Sadness** | `#3B82F6` (Sky Blue) | Grief, emotional loss, discouragement, or reduced affect |
-| **Anger** | `#EF4444` (Crimson) | Frustration, perceived hostility, resentment, or outrage |
-| **Love** | `#EC4899` (Rose) | Tenderness, emotional warmth, deep affection, and bond |
-| **Fear** | `#8B5CF6` (Purple) | Apprehension, acute panic, vulnerability, or perceived danger |
-| **Surprise** | `#10B981` (Teal) | Astonishment, unanticipated revelation, or sudden shock |
+---
 
-### Training vs. Inference Parity
-During training in `main.ipynb`, the text undergoes:
+## 🧩 How It Works
+
+```mermaid
+flowchart LR
+    A[👤 User text] --> B[⚛️ React UI<br/>Vite + TS + Tailwind]
+    B -- POST /api/predict --> C[⚡ FastAPI]
+    C --> D[🧹 NLTK preprocessing]
+    D --> E[📐 TF-IDF<br/>13,359 features]
+    E --> F[🎯 Logistic Regression<br/>C = 10.0]
+    F --> G[(🗄️ SQLite history)]
+    F --> B
+    style A fill:#171128,stroke:#8B5CF6,color:#fff
+    style B fill:#171128,stroke:#61DAFB,color:#fff
+    style C fill:#171128,stroke:#009688,color:#fff
+    style D fill:#171128,stroke:#F59E0B,color:#fff
+    style E fill:#171128,stroke:#EC4899,color:#fff
+    style F fill:#171128,stroke:#10B981,color:#fff
+    style G fill:#171128,stroke:#3B82F6,color:#fff
+```
+
+### Training ↔ inference parity
+
+The text goes through the same six steps in `main.ipynb` (training) and `backend/model_service.py` (inference):
+
 1. Lowercasing
 2. Punctuation removal (`string.punctuation`)
 3. Numeric digit removal
 4. URL removal via regex (`https?:\S+|www\.\S+`)
-5. Emoji & non-ASCII character stripping
-6. **Tokenization & Stopword Pruning:** Words are split with NLTK `word_tokenize` and filtered against the **198 English stopwords**.
+5. Emoji and non-ASCII stripping
+6. Tokenization with NLTK `word_tokenize` and pruning against **198 English stopwords**
 
 > [!IMPORTANT]
-> The backend prediction service (`backend/model_service.py`) strictly implements this complete sequence to guarantee feature alignment with the 13,359 vocabulary dimensions in `tfidf_vectorizer.pkl`.
+> Skipping or reordering any step shifts the features away from the 13,359 vocabulary dimensions in `tfidf_vectorizer.pkl`. Keep `model_service.py` in sync with the notebook.
 
 ---
 
-## Prerequisites
+## 🗂️ Project Structure
 
-- **Python:** Version 3.10, 3.11, or 3.12
-- **Node.js:** Version 18.0.0 or higher (v20+ recommended)
-- **Package Managers:** `pip` and `npm`
+<details>
+<summary><b>Click to expand the directory tree</b></summary>
+
+```
+emotion-predictor/
+├── backend/                             # Python FastAPI service
+│   ├── artifacts/
+│   │   ├── best_lr_model.pkl            # Trained Logistic Regression model
+│   │   ├── tfidf_vectorizer.pkl         # Fitted TF-IDF vectorizer
+│   │   └── emotion_mapping.pkl          # Class label ↔ ID mapping
+│   ├── main.py                          # FastAPI app and route handlers
+│   ├── model_service.py                 # NLTK preprocessing + inference
+│   ├── database.py                      # SQLite persistence and history
+│   ├── requirements.txt
+│   ├── test_backend.py                  # Integration test suite
+│   └── history.db                       # Created on first launch
+│
+├── frontend/                            # React + Vite + TypeScript
+│   ├── public/
+│   ├── src/
+│   │   ├── components/Navbar.tsx        # Header, connection badge, tabs
+│   │   ├── views/
+│   │   │   ├── HomeView.tsx             # Hero, sample pills, console wave
+│   │   │   ├── AnalyzeWorkspaceView.tsx # Analysis workspace + result cards
+│   │   │   ├── HistoryView.tsx          # Table, filters, search, CSV export
+│   │   │   └── MethodologyView.tsx      # 5-stage pipeline + hyperparameters
+│   │   ├── api.ts                       # Typed fetch client
+│   │   ├── emotionMeta.ts               # Taxonomy, colors, presets
+│   │   ├── App.tsx
+│   │   ├── index.css
+│   │   └── main.tsx
+│   ├── package.json
+│   ├── tailwind.config.js               # Design tokens and palette
+│   ├── tsconfig.json
+│   ├── .env.example
+│   └── .env
+│
+├── stitch_moodlens_ai_platform/         # Raw Stitch design exports
+├── assets/banner.svg                    # Animated README banner
+├── main.ipynb                           # Original training notebook
+├── README.md
+└── .gitignore
+```
+
+</details>
 
 ---
 
-## Quick Start Guide
+## 🚀 Quick Start
 
-Open **two separate terminal windows** (PowerShell, Command Prompt, or Bash) in `C:\emotion predictor`:
+**Prerequisites:** Python 3.10 – 3.12, Node.js 18+ (v20+ recommended), `pip` and `npm`.
 
-### Terminal 1: Backend (FastAPI)
+Open **two terminals** in the project root.
+
+### 1️⃣ Backend (FastAPI)
 
 ```powershell
-# 1. Navigate to backend directory
 cd backend
 
-# 2. (Recommended) Create and activate a virtual environment
+# Recommended: virtual environment
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1    # On Windows PowerShell
-# source .venv/bin/activate     # On macOS/Linux
+.\.venv\Scripts\Activate.ps1      # Windows PowerShell
+# source .venv/bin/activate       # macOS / Linux
 
-# 3. Install required Python packages
 pip install -r requirements.txt
-
-# 4. Start the FastAPI server with hot-reload
 uvicorn main:app --reload --port 8000
 ```
 
-- **Backend API:** [http://localhost:8000](http://localhost:8000)
-- **Interactive Swagger Docs:** [http://localhost:8000/docs](http://localhost:8000/docs)
-- **Health Check:** [http://localhost:8000/api/health](http://localhost:8000/api/health)
+| Service | URL |
+| :--- | :--- |
+| API | http://localhost:8000 |
+| Swagger docs | http://localhost:8000/docs |
+| Health check | http://localhost:8000/api/health |
 
----
-
-### Terminal 2: Frontend (React + Vite)
+### 2️⃣ Frontend (React + Vite)
 
 ```powershell
-# 1. Navigate to frontend directory
 cd frontend
-
-# 2. Install dependencies (if not already installed)
 npm install
-
-# 3. Launch Vite development server
 npm run dev
 ```
 
-- **Web Application:** [http://localhost:5173](http://localhost:5173)
+Open **http://localhost:5173** and start analyzing. 🎉
 
 ---
 
-## REST API Reference
+## 📡 API Reference
 
-### 1. Health Check
-```http
-GET /api/health
-```
-**Response (200 OK):**
+| Method | Endpoint | Purpose |
+| :---: | :--- | :--- |
+| `GET` | `/api/health` | Model and service readiness |
+| `POST` | `/api/predict` | Classify text and save to history |
+| `GET` | `/api/history?limit=100&offset=0` | Paginated past predictions |
+| `DELETE` | `/api/history` | Clear all history |
+| `GET` | `/api/stats` | Aggregate telemetry |
+
+<details open>
+<summary><b>POST /api/predict</b></summary>
+
+**Request**
 ```json
-{
-  "status": "healthy",
-  "model_loaded": true,
-  "classes": ["sadness", "anger", "love", "surprise", "fear", "joy"],
-  "artifacts_dir": "C:\\emotion predictor\\backend\\artifacts",
-  "error": null
-}
+{ "text": "I just received the acceptance letter for my dream master's program!" }
 ```
 
----
-
-### 2. Emotion Prediction
-```http
-POST /api/predict
-Content-Type: application/json
-```
-**Request Body:**
-```json
-{
-  "text": "I just received the acceptance letter for my dream master's program!"
-}
-```
-**Response (200 OK):**
+**Response `200 OK`**
 ```json
 {
   "predicted_emotion": "joy",
@@ -217,14 +236,26 @@ Content-Type: application/json
   "history_id": 1
 }
 ```
+Empty or whitespace-only text returns **`422`**.
+</details>
 
----
+<details>
+<summary><b>GET /api/health</b></summary>
 
-### 3. Query History
-```http
-GET /api/history?limit=100&offset=0
+```json
+{
+  "status": "healthy",
+  "model_loaded": true,
+  "classes": ["sadness", "anger", "love", "surprise", "fear", "joy"],
+  "artifacts_dir": "C:\\emotion predictor\\backend\\artifacts",
+  "error": null
+}
 ```
-**Response (200 OK):**
+</details>
+
+<details>
+<summary><b>GET /api/history</b></summary>
+
 ```json
 [
   {
@@ -237,111 +268,134 @@ GET /api/history?limit=100&offset=0
   }
 ]
 ```
+</details>
 
----
+<details>
+<summary><b>DELETE /api/history</b></summary>
 
-### 4. Clear History
-```http
-DELETE /api/history
-```
-**Response (200 OK):**
 ```json
-{
-  "status": "success",
-  "message": "Cleared 1 history records",
-  "deleted_count": 1
-}
+{ "status": "success", "message": "Cleared 1 history records", "deleted_count": 1 }
 ```
+</details>
 
----
+<details>
+<summary><b>GET /api/stats</b></summary>
 
-### 5. Aggregate Telemetry Stats
-```http
-GET /api/stats
-```
-**Response (200 OK):**
 ```json
-{
-  "total_records": 1,
-  "avg_confidence": 0.9842,
-  "dominant_emotion": "joy",
-  "dominant_count": 1
-}
+{ "total_records": 1, "avg_confidence": 0.9842, "dominant_emotion": "joy", "dominant_count": 1 }
+```
+</details>
+
+Quick test from the command line:
+
+```bash
+curl -X POST http://localhost:8000/api/predict \
+  -H "Content-Type: application/json" \
+  -d '{"text": "I am so scared of what happens next"}'
 ```
 
 ---
 
-## Environment Configuration
+## ⚙️ Configuration
 
-### Frontend (`frontend/.env`)
-| Variable | Default Value | Description |
-| :--- | :--- | :--- |
-| `VITE_API_BASE_URL` | `http://localhost:8000` | Target FastAPI backend base URL |
-
-### Backend Environment Variables
-| Variable | Default Value | Description |
-| :--- | :--- | :--- |
-| `CORS_ORIGINS` | `http://localhost:5173,http://127.0.0.1:5173` | Comma-separated list of permitted origins |
+| Where | Variable | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `frontend/.env` | `VITE_API_BASE_URL` | `http://localhost:8000` | Backend base URL |
+| Backend env | `CORS_ORIGINS` | `http://localhost:5173,http://127.0.0.1:5173` | Comma-separated allowed origins |
 
 ---
 
-## Automated Testing & Verification
-
-Run the comprehensive integration test suite to verify the model artifacts, probability normalization, input validation, and SQLite persistence:
+## ✅ Testing
 
 ```powershell
 python backend/test_backend.py
 ```
 
-### Verified Test Assertions:
-1. **Model & Vectorizer Loading:** Verified single load at application startup.
-2. **Health Check:** Returns HTTP 200 with all 6 classes registered.
-3. **Affect Accuracy:**
-   - Joy sample $\rightarrow$ `joy` ($99.92\%$ confidence)
-   - Sadness sample $\rightarrow$ `sadness` ($100.00\%$ confidence)
-   - Anger sample $\rightarrow$ `anger` ($99.58\%$ confidence)
-   - Love sample $\rightarrow$ `love` ($98.43\%$ confidence)
-   - Fear sample $\rightarrow$ `fear` ($94.63\%$ confidence)
-   - Surprise sample $\rightarrow$ `surprise` ($95.76\%$ confidence)
-4. **Probability Sum:** Verified $\sum p_i = 1.0000 \pm 0.001$.
-5. **Validation:** Empty strings and whitespace-only payloads rejected with HTTP 422.
-6. **Persistence:** History write, query retrieval, and clear actions validated against SQLite.
-7. **Frontend Build:** `npm run build` compiles without TypeScript or Vite errors.
+| # | Check | Result |
+| :-: | :--- | :--- |
+| 1 | Model and vectorizer load once at startup | ✅ |
+| 2 | `/api/health` returns 200 with all 6 classes | ✅ |
+| 3 | Probabilities sum to 1.0000 ± 0.001 | ✅ |
+| 4 | Empty / whitespace input rejected with 422 | ✅ |
+| 5 | SQLite write, read and clear | ✅ |
+| 6 | `npm run build` compiles with no TypeScript or Vite errors | ✅ |
+
+**Sample accuracy checks**
+
+| Emotion | Confidence |
+| :--- | :--- |
+| 😄 Joy | 99.92% |
+| 😢 Sadness | 100.00% |
+| 😠 Anger | 99.58% |
+| ❤️ Love | 98.43% |
+| 😨 Fear | 94.63% |
+| 😲 Surprise | 95.76% |
 
 ---
 
-## Troubleshooting
+## 🛠️ Troubleshooting
 
-### 1. PowerShell Script Execution Policy
-If `.\.venv\Scripts\Activate.ps1` produces a script execution error:
+<details>
+<summary><b>PowerShell blocks the venv activation script</b></summary>
+
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\.venv\Scripts\Activate.ps1
 ```
+</details>
 
-### 2. Missing NLTK Corpora
-`model_service.py` automatically downloads `punkt_tab` and `stopwords` on startup. If running in an air-gapped/offline environment, download them manually via:
+<details>
+<summary><b>Missing NLTK data (offline machines)</b></summary>
+
+`model_service.py` downloads `punkt_tab` and `stopwords` on startup. If you are offline:
+
 ```python
 import nltk
 nltk.download('punkt')
 nltk.download('punkt_tab')
 nltk.download('stopwords')
 ```
+</details>
 
-### 3. Port Already in Use
-If port `8000` is already in use by another process:
+<details>
+<summary><b>Port 8000 is already in use</b></summary>
+
 ```powershell
 uvicorn main:app --reload --port 8080
 ```
-Update `frontend/.env` accordingly:
+Then update `frontend/.env`:
 ```env
 VITE_API_BASE_URL=http://localhost:8080
 ```
+</details>
+
+<details>
+<summary><b>Frontend shows the backend as offline</b></summary>
+
+Check that the backend is running, that `VITE_API_BASE_URL` matches its port, and that your frontend origin is listed in `CORS_ORIGINS`.
+</details>
 
 ---
 
-## License & Acknowledgments
+## 🗺️ Roadmap
 
-- **Model & Dataset:** Multi-class emotion dataset containing ~16,000 annotated textual instances.
-- **Frontend Design System:** Google Stitch MoodLens AI design system (Dark obsidian theme, Plus Jakarta Sans, Inter typography).
-- **Architecture:** Senior Full-Stack integration pairing FastAPI async runtime with React Vite.
+- [ ] Transformer baseline (e.g. DistilBERT) for comparison with TF-IDF + LR
+- [ ] Batch prediction endpoint
+- [ ] Docker Compose for one-command startup
+- [ ] Model evaluation dashboard (confusion matrix, per-class F1)
+
+---
+
+## 🙏 Acknowledgments
+
+- **Dataset:** multi-class emotion dataset with ~16,000 annotated text samples
+- **Design:** Google Stitch MoodLens AI design system (dark obsidian theme, Plus Jakarta Sans and Inter)
+- **Stack:** FastAPI async runtime paired with React + Vite
+
+<div align="center">
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=4000&pause=1000&color=A5A5C0&center=true&vCenter=true&width=500&height=30&lines=Built+with+%E2%9D%A4%EF%B8%8F+and+a+lot+of+TF-IDF" alt="Footer"/>
+
+⭐ If you found this useful, consider starring the repo!
+
+</div>
